@@ -1133,7 +1133,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
     
 // ===== DATES =====
 const DATES = {
-  regOpen:    new Date('2026-05-13T23:59:59'),
+  regOpen:    new Date('2026-05-14T00:00:00'),
   regClose:   new Date('2026-05-13T23:59:59'),
   sprintStart:new Date('2026-05-14T00:00:00'),
   deadline:   new Date('2026-05-18T23:59:59'),
@@ -1143,7 +1143,7 @@ const DATES = {
 function pad(n) { return String(n).padStart(2,'0'); }
 
 function getPhase(now) {
-  if (now < DATES.regOpen) return { label: 'Registration closes in', target: DATES.regOpen, start: new Date('2026-05-01'), color: 'var(--accent)' };
+  if (now < DATES.regOpen) return { label: 'Game Started', target: DATES.regOpen, start: new Date('2026-05-01'), color: 'var(--accent)' };
   if (now < DATES.regClose) return { label: 'Registration closes in', target: DATES.regClose, start: DATES.regOpen, color: 'var(--accent)' };
   if (now < DATES.deadline) return { label: 'Submission deadline in', target: DATES.deadline, start: DATES.sprintStart, color: 'var(--accent2)' };
   if (now < DATES.results) return { label: 'Results announced in', target: DATES.results, start: DATES.deadline, color: 'var(--accent3)' };
